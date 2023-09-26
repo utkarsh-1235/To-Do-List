@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function Todo({todoData, isFinished, changeFinished}){
+function Todo({todoData, isFinished, changeFinished, onDelete, onEdit}){
     const [Finished, setFinished] = useState(isFinished);
  return (
     <div>
@@ -9,8 +9,8 @@ function Todo({todoData, isFinished, changeFinished}){
                                                                    changeFinished(e.target.checked)
                                                                   } }/>
         {todoData}
-        <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={onEdit}>Edit</button>
+        <button onClick={onDelete}>Delete</button>
     </div>
  )
 }
